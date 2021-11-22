@@ -33,13 +33,21 @@ describe("getYieldForCrop", () => {
     test("Get yield for crop, simple", () => {
         const corn = {
             name: "corn",
-            yield: 3,
+            yield: 30,
+            factor: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
         };
         const input = {
             crop: corn,
             numCrops: 10,
+            sun: 'high',
         };
-        expect(getYieldForCrop(input)).toBe(30);
+        expect(getYieldForCrop(input)).toBe(800);
     });
 });
 
@@ -88,7 +96,7 @@ describe("getCostsForCrop", () => {
     test("Calculate costs for crop", () => {
         const corn = {
             name: "corn",
-            yield: 3,
+            yield: 30,
         };
         const input = {
             crop: corn,
@@ -103,10 +111,18 @@ describe("getRevenueForCrop", () => {
         const corn = {
             name: "corn",
             yield: 30,
+            factor: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
         };
         const input = {
             crop: corn,
             numCrops: 10,
+            sun: 'medium',
         };
         expect(getRevenueForCrop(input)).toBe(60);
     });
@@ -115,10 +131,22 @@ describe("getRevenueForCrop", () => {
 describe("getProfitForCrop", () => {
     test("Calculate profit for crop", () => {
         const corn = {
-            revenue: 60,
-            costs: 10,
+            name: "corn",
+            yield: 30,
+            factor: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
         };
-        expect(getProfitForCrop(corn)).toBe(50);
+        const input = {
+            crop: corn,
+            numCrops: 10,
+            sun: 'high',
+        };
+        expect(getProfitForCrop(input)).toBe(150);
     });
 });
 
