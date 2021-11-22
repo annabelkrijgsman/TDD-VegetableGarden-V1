@@ -1,0 +1,15 @@
+{
+  "name": "annabel_krijgsman-tdd-vegetablegarden-vs1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "farm.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
