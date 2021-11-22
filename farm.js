@@ -1,5 +1,3 @@
-const { cond } = require("lodash");
-
 const getYieldForPlant = (corn) => corn.yield;
 
 const getYieldForCrop = (input) => input.crop.yield * input.numCrops;
