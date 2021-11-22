@@ -22,8 +22,14 @@ const getTotalYield = ({ crops }) => {
     return totalCorn + totalPumpkin;
 };
 
+const getCostsForCrop = (input) => {
+    const totalCosts = input.numCrops * 1;
+    return totalCosts;
+};
+
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
-    getTotalYield
+    getTotalYield,
+    getCostsForCrop
 };
