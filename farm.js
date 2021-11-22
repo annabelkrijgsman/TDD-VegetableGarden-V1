@@ -1,4 +1,12 @@
-const getYieldForPlant = (corn) => corn.yield;
+const getYieldForPlant = (environmentFactors, corn) => {
+    if (environmentFactors.sun === 'low') {
+        return corn.yield - 50;
+    } else if (environmentFactors.sun === 'medium') {
+        return corn.yield;
+    } else if (environmentFactors.sun === 'high') {
+        return corn.yield + 50;
+    }
+};
 
 const getYieldForCrop = (input) => input.crop.yield * input.numCrops;
 
@@ -29,5 +37,5 @@ module.exports = {
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForCrop,
-    getTotalProfit
+    getTotalProfit,
 };
