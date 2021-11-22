@@ -48,10 +48,24 @@ describe("getTotalYield", () => {
         const corn = {
             name: "corn",
             yield: 30,
+            factor: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
         };
         const pumpkin = {
             name: "pumpkin",
             yield: 60,
+            factor: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
         };
         const crops = [
             { crop: corn, numCrops: 5, sun: 'high' },

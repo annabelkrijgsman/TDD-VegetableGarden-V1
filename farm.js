@@ -1,23 +1,24 @@
 const getYieldForPlant = (environmentFactors, corn) => {
     if (environmentFactors.sun === 'low') {
-        return corn.yield - 50;
+        return corn.yield + corn.factor.sun.low;
     } else if (environmentFactors.sun === 'medium') {
         return corn.yield;
     } else if (environmentFactors.sun === 'high') {
-        return corn.yield + 50;
+        return corn.yield + corn.factor.sun.high;
     }
 };
 
 const getYieldForCrop = (input) => input.crop.yield * input.numCrops;
 
 const getTotalYield = ({ crops }) => {
-    const totalYieldCorn = crops[0].crop.yield + 50;
-    const totalCorn = totalYieldCorn * crops[0].numCrops;
+    if (crops[0].sun === 'high' && crops[1].sun === 'low') {
+        const totalYieldCropOne = crops[0].crop.yield + crops[0].crop.factor.sun.high;
+        const totalCropOne = totalYieldCropOne * crops[0].numCrops
+        const totalYieldCropTwo = crops[1].crop.yield + crops[1].crop.factor.sun.low;
+        const totalCropTwo = totalYieldCropTwo * crops[1].numCrops
 
-    const totalYieldPumpin = crops[1].crop.yield - 50;
-    const totalPumpin = totalYieldPumpin * crops[1].numCrops;
-
-    return totalCorn + totalPumpin;
+        return totalCropOne + totalCropTwo;
+    }
 };
 
 const getCostsForCrop = (input) => input.numCrops * 1;
