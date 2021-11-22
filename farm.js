@@ -11,10 +11,13 @@ const getYieldForPlant = (environmentFactors, corn) => {
 const getYieldForCrop = (input) => input.crop.yield * input.numCrops;
 
 const getTotalYield = ({ crops }) => {
-    const totalCorn = crops[0].crop.yield * crops[0].numCrops;
-    const totalPumpkin = crops[1].crop.yield * crops[1].numCrops;
+    const totalYieldCorn = crops[0].crop.yield + 50;
+    const totalCorn = totalYieldCorn * crops[0].numCrops;
 
-    return totalCorn + totalPumpkin;
+    const totalYieldPumpin = crops[1].crop.yield - 50;
+    const totalPumpin = totalYieldPumpin * crops[1].numCrops;
+
+    return totalCorn + totalPumpin;
 };
 
 const getCostsForCrop = (input) => input.numCrops * 1;
@@ -37,5 +40,5 @@ module.exports = {
     getCostsForCrop,
     getRevenueForCrop,
     getProfitForCrop,
-    getTotalProfit,
+    getTotalProfit
 };
