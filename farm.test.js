@@ -6,11 +6,11 @@ const {
     getRevenueForCrop,
     getProfitForCrop,
     getTotalProfit
-} = require("./farm");
+} = require('./farm');
 
-describe("getYieldForPlant", () => {
+describe('getYieldForPlant', () => {
     const corn = {
-        name: "corn",
+        name: 'corn',
         yield: 30,
         factor: {
             sun: {
@@ -21,17 +21,17 @@ describe("getYieldForPlant", () => {
         },
     };
     const environmentFactors = {
-        sun: "high",
+        sun: 'high',
     };
-    test("Get yield for plant with environment factors", () => {
+    test('Get yield for plant with environment factors', () => {
         expect(getYieldForPlant(environmentFactors, corn)).toBe(45);
     });
 });
 
-describe("getYieldForCrop", () => {
-    test("Get yield for crop, simple", () => {
+describe('getYieldForCrop', () => {
+    test('Get yield for crop, simple', () => {
         const corn = {
-            name: "corn",
+            name: 'corn',
             yield: 30,
         };
         const input = {
@@ -43,14 +43,14 @@ describe("getYieldForCrop", () => {
     });
 });
 
-describe("getTotalYield", () => {
-    test("Calculate total yield with multiple crops", () => {
+describe('getTotalYield', () => {
+    test('Calculate total yield with multiple crops', () => {
         const corn = {
-            name: "corn",
+            name: 'corn',
             yield: 30,
         };
         const pumpkin = {
-            name: "pumpkin",
+            name: 'pumpkin',
             yield: 60,
         };
         const crops = [
@@ -70,10 +70,10 @@ describe("getTotalYield", () => {
     // });
 });
 
-describe("getCostsForCrop", () => {
-    test("Calculate costs for crop", () => {
+describe('getCostsForCrop', () => {
+    test('Calculate costs for crop', () => {
         const corn = {
-            name: "corn",
+            name: 'corn',
             yield: 30,
         };
         const input = {
@@ -84,10 +84,10 @@ describe("getCostsForCrop", () => {
     });
 });
 
-describe("getRevenueForCrop", () => {
-    test("Calculate revenue for crop", () => {
+describe('getRevenueForCrop', () => {
+    test('Calculate revenue for crop', () => {
         const corn = {
-            name: "corn",
+            name: 'corn',
             yield: 30,
         };
         const input = {
@@ -99,10 +99,10 @@ describe("getRevenueForCrop", () => {
     });
 });
 
-describe("getProfitForCrop", () => {
-    test("Calculate profit for crop", () => {
+describe('getProfitForCrop', () => {
+    test('Calculate profit for crop', () => {
         const corn = {
-            name: "corn",
+            name: 'corn',
             yield: 30,
         };
         const input = {
@@ -114,14 +114,14 @@ describe("getProfitForCrop", () => {
     });
 });
 
-describe("getTotalProfit", () => {
-    test("Calculate total profit with multiple crops", () => {
+describe('getTotalProfit', () => {
+    test('Calculate total profit with multiple crops', () => {
         const corn = {
-            name: "corn",
+            name: 'corn',
             yield: 30,
         };
         const pumpkin = {
-            name: "pumpkin",
+            name: 'pumpkin',
             yield: 60,
         };
         const crops = [
