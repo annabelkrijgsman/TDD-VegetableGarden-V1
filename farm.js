@@ -1,41 +1,27 @@
-const getYieldForPlant = (corn) => {
-    if (corn.yield === 30) {
-        return corn.yield;
-    }
-};
+const { cond } = require("lodash");
 
-const getYieldForCrop = (input) => {
-    const total = input.crop.yield * input.numCrops;
-    return total;
-};
+const getYieldForPlant = (corn) => corn.yield;
+
+const getYieldForCrop = (input) => input.crop.yield * input.numCrops;
 
 const getTotalYield = ({ crops }) => {
-
-    const cornYield = crops[0].crop.yield;
-    const cornNum = crops[0].numCrops;
-    const totalCorn = cornYield * cornNum;
-
-    const pumpkinYield = crops[1].crop.yield;
-    const pumpkimNum = crops[1].numCrops;
-    const totalPumpkin = pumpkinYield * pumpkimNum;
+    const totalCorn = crops[0].crop.yield * crops[0].numCrops;
+    const totalPumpkin = crops[1].crop.yield * crops[1].numCrops;
 
     return totalCorn + totalPumpkin;
 };
 
-const getCostsForCrop = (input) => {
-    const totalCosts = input.numCrops * 1;
-    return totalCosts;
-};
+const getCostsForCrop = (input) => input.numCrops * 1;
 
-const getRevenueForCrop = (input) => {
-    const totalRevenue = input.crop.yield * 2;
-    return totalRevenue;
-};
+const getRevenueForCrop = (input) => input.crop.yield * 2;
+
+const getProfitForCrop = (input) => input.revenue - input.costs;
 
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
     getTotalYield,
     getCostsForCrop,
-    getRevenueForCrop
+    getRevenueForCrop,
+    getProfitForCrop
 };
