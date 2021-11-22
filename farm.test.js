@@ -20,7 +20,6 @@ describe("getYieldForPlant", () => {
             },
         },
     };
-
     const environmentFactors = {
         sun: "high",
     };
